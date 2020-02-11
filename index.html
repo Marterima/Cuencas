@@ -73,10 +73,6 @@
         function pop_CuencaLurn_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">ID</th>\
-                        <td>' + (feature.properties['OBJECTID_1'] !== null ? Autolinker.link(feature.properties['OBJECTID_1'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <th scope="row">Código</th>\
                         <td>' + (feature.properties['CODIGO'] !== null ? Autolinker.link(feature.properties['CODIGO'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
                     </tr>\
