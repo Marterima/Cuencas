@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
         <link rel="stylesheet" href="css/leaflet-search.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
+        <link rel="stylesheet" href="css/L.leaflet-logo.min.css">
         <style>
         html, body, #map {
             width: 100%;
@@ -38,6 +39,7 @@
         <script src="data/CuencaLurn_1.js"></script>
         <script src="data/UnidadesFiscalizablesMinera_2.js"></script>
         <script src="data/CentrosPobaldos_3.js"></script>
+        <script src="js/leaflet-logo.min.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
@@ -45,6 +47,15 @@
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         L.control.locate({locateOptions: {maxZoom: 19}}).addTo(map);
+        /*** Controls ***/
+        L.control.logo({
+            position: 'topleft',
+            height: '50px',
+            width: '250px',
+            target: '_blank',
+            link: 'https://www.gob.pe/oefa',
+            image: 'images/logo oefa.png'
+        }).addTo(map);
         var measureControl = new L.Control.Measure({
             position: 'topleft',
             primaryLengthUnit: 'meters',
